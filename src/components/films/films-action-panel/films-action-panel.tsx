@@ -7,19 +7,17 @@ import { filmsActionPanelStyles } from './films-action-panel.style'
 export const FilmsActionPanel: React.FunctionComponent<{
     films: FilmModel[]
 }> = ({ films }) => {
-    const genres = ['all', 'documentary', 'comedy', 'horror', 'crime']
-    const sortedCategories = [{ text: 'release date', value: 0 }]
     const classes = filmsActionPanelStyles()
     return (
         <div>
             <div className={classes.actionPanel}>
                 <div className={classes.nav}>
-                    {genres.map((gener) => (
+                    {GENRES.map((gener) => (
                         <span key={gener}>{gener}</span>
                     ))}
                 </div>
                 <div className={classes.sorting}>
-                    sort by <Select items={sortedCategories} />
+                    sort by <Select items={SORTED_CATEGORIES} />
                 </div>
             </div>
             <p className={classes.count}>
