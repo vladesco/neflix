@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { FilmsService } from '../../shared/services/films.service'
-import { FilmModel } from '../../shared/services/types'
+import { FilmsService } from '../../../shared/services/films.service'
+import { FilmModel } from '../../../shared/services/types'
 import { FilmsList } from './films-list/films-list'
 import { FilmsActionPanel } from './films-action-panel/films-action-panel'
 import { filmsStyles } from './films.style'
 import { FilmsSearching } from './films-searching/films-searching'
-import { ErrorBoundary } from '../../shared/components/error-boundary/error-boundart'
+import { ErrorBoundary } from '../../../shared/components'
 
 export const Films: React.FunctionComponent<{
     filmsService: FilmsService

@@ -1,4 +1,4 @@
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss'
 
 export const filmsSearchingStyles = createUseStyles({
     container: {
@@ -36,39 +36,11 @@ export const filmsSearchingStyles = createUseStyles({
 
             '&:nth-child(3)': {
                 display: 'flex',
+                height: '40px',
                 margin: ['16px', '128px'],
                 gap: '10px',
-            }
+            },
         },
-
-    },
-
-    button_add: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '200px',
-        height: '40px',
-        backgroundColor: 'rgba(140, 135, 135, 0.5)',
-        color: '#F65261',
-        fontSize: '24px',
-        textTransform: 'uppercase',
-        borderRadius: '5px',
-        cursor: 'pointer',
-    },
-
-    button_searh: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '250px',
-        height: '40px',
-        backgroundColor: '#F65261',
-        color: 'white',
-        fontSize: '24px',
-        textTransform: 'uppercase',
-        borderRadius: '5px',
-        cursor: 'pointer',
     },
 
     label: {
@@ -79,12 +51,5 @@ export const filmsSearchingStyles = createUseStyles({
 
     input: {
         flex: 1,
-        height: '40px',
-        backgroundColor: '#232323',
-        color: 'white',
-        borderRadius: '5px',
-        border: 'none',
-        fontSize: '24px',
-        paddingLeft: '24px',
-    }
-});
+    },
+})

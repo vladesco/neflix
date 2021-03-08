@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Select } from '../../../shared/components/select/select'
-import { FilmModel } from '../../../shared/services/types'
+
+import { GENRES, SORTED_CATEGORIES } from './const'
+import { Select } from '../../../molecules/select/select'
+import { FilmModel } from '../../../../shared/services/types'
 import { filmsActionPanelStyles } from './films-action-panel.style'
 
 export const FilmsActionPanel: React.FunctionComponent<{

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import { Loader } from '../../../shared/components/loader/loader'
-import { FilmModel } from '../../../shared/services/types'
+
+import { DEFAULT_IMAGE } from './const'
+import { Loader } from '../../../atoms/loader/loader'
+import { FilmModel } from '../../../../shared/services/types'
 import { filmCardStyles } from './film-card.style'
-import { Menu } from '../../../shared/components/menu/menu'
+import { Menu } from '../../../molecules/menu/menu'
 
 export const FilmCard: React.FunctionComponent<FilmModel> = ({
     children,

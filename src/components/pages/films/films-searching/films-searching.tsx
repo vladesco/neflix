@@ -1,5 +1,7 @@
 import React from 'react'
-import { Label } from '../../../shared/components/label/label'
+import { Label } from '../../../../shared/components'
+import { Input, ThemeButton } from '../../../atoms'
+
 import { filmsSearchingStyles } from './films-searching.style'
 
 export const FilmsSearching: React.FunctionComponent = () => {
@@ -8,15 +10,15 @@ export const FilmsSearching: React.FunctionComponent = () => {
         <div className={classes.container}>
             <div>
                 <Label />
-                <div className={classes.button_add}>+ add movie</div>
+                <ThemeButton theme="MEDIUM">+ add movie</ThemeButton>
             </div>
             <p className={classes.label}>find your movie</p>
             <div>
-                <input
+                <Input
                     className={classes.input}
-                    placeholder="What do you want to watch?"
+                    placeHolder="What do you want to watch?"
                 />
-                <div className={classes.button_searh}>search</div>
+                <ThemeButton theme="LIGHT">search</ThemeButton>
             </div>
         </div>
     )

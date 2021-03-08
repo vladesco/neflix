@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { FilmModel } from '../../../shared/services/types'
+import { FilmModel } from '../../../../shared/services/types'
 import { FilmCard } from '../film-card/film-card'
 import { filmsListStyles } from './films-list.style'
 
