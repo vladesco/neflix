@@ -1,11 +1,11 @@
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss'
 
-export const filmsStyles = createUseStyles({
+export const filmsContentStyles = createUseStyles({
     filmsSection: {
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: '#232323',
         color: '#8c8787',
-        padding: [0, '48px']
-    }
+        padding: [0, '48px'],
+    },
 })
