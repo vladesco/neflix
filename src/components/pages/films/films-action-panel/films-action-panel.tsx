@@ -1,25 +1,38 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { GENRES, SORTED_CATEGORIES } from './const'
-import { Select } from '../../../molecules/select/select'
+import { Select } from '../../../atoms'
 import { FilmModel } from '../../../../shared/services/types'
 import { filmsActionPanelStyles } from './films-action-panel.style'
+import { GENRES, SORTED_CATEGORIES } from '../../../const'
 
-export const FilmsActionPanel: React.FunctionComponent<{
+type props = {
     films: FilmModel[]
-}> = ({ films }) => {
+    onSetSortedCategory: (category: keyof FilmModel) => void
+    sortedCategory: string
+}
+
+export const FilmsActionPanel: React.FC<props> = ({
+    onSetSortedCategory,
+    films,
+    sortedCategory,
+}) => {
     const classes = filmsActionPanelStyles()
     return (
         <div>
             <div className={classes.actionPanel}>
                 <div className={classes.nav}>
                     {GENRES.map((gener) => (
-                        <span key={gener}>{gener}</span>
+                        <span key={gener.value}>{gener.text}</span>
                     ))}
                 </div>
                 <div className={classes.sorting}>
-                    sort by <Select items={SORTED_CATEGORIES} />
+                    sort by
+                    <Select
+                        onSelect={onSetSortedCategory}
+                        items={SORTED_CATEGORIES}
+                        selectedItem={sortedCategory}
+                    />
                 </div>
             </div>
             <p className={classes.count}>

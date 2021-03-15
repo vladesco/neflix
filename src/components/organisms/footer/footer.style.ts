@@ -1,9 +1,7 @@
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss'
 
 export const useFooterStyles = createUseStyles({
     footer: {
-        position: 'fixed',
-        bottom: 0,
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -12,7 +10,7 @@ export const useFooterStyles = createUseStyles({
         backgroundColor: '#424242',
 
         '& *': {
-            margin: '16px'
-        }
-    }
+            margin: '16px',
+        },
+    },
 })

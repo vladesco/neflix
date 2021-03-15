@@ -3,7 +3,7 @@ import { ThemesButton } from './types'
 type colors = {
     backgroundColor: string
     color: string
-    borderColor: string
+    border: string
 }
 
 export const THEME_DESCRIPTIONS: { [key in ThemesButton]: Partial<colors> } = {
@@ -18,6 +18,6 @@ export const THEME_DESCRIPTIONS: { [key in ThemesButton]: Partial<colors> } = {
     DARK: {
         color: '#F65261',
         backgroundColor: '#232323',
-        borderColor: '#F65261',
+        border: '1px solid #F65261',
     },
 }

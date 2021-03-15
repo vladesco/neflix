@@ -1,6 +1,6 @@
 import { createUseStyles } from 'react-jss'
 
-export const inputStyles = createUseStyles({
+export const dateInputStyles = createUseStyles({
     input: {
         backgroundColor: '#424242',
         color: 'white',
