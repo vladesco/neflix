@@ -5,20 +5,7 @@ export const filmsSearchingStyles = createUseStyles({
         display: 'flex',
         flexDirection: 'column',
         height: '300px',
-        position: 'relative',
-        backgroundImage: 'url(./assets/images/posters.jpg)',
         gap: '30px',
-
-        '&:after': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(0, 0, 0, .9)',
-            zIndex: 1,
-        },
 
         '& >*': {
             display: 'flex',

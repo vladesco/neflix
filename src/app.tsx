@@ -4,14 +4,14 @@ import plugin from 'jss-plugin-extend'
 import { FilmsService } from './shared/services/films.service'
 import { Label } from './components/atoms'
 import { Footer } from './components/organisms'
-import { Films } from './components/pages/films/films'
+import { FilmsPage } from './components/pages/films-page/films-page'
 
 jss.use(plugin())
 const filmService = new FilmsService()
 
 export const App = () => (
     <>
-        <Films filmsService={filmService} />
+        <FilmsPage filmsService={filmService} />
         <Footer>
             <Label />
         </Footer>
