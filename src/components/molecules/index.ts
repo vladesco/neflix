@@ -1,3 +1,2 @@
-export * from './menu/menu'
-export * from './popup/popup'
-export * from './card/card'
+export * from '../atoms/menu/menu'
+export * from './film-card/film-card'

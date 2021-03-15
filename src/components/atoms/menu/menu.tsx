@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
+import { AtomReactComponent } from '../types'
 import { menuStyles } from './menu.style'
 
-export const Menu: React.FunctionComponent = ({ children }) => {
+export const Menu: AtomReactComponent = ({ children, className }) => {
     const [isExpanded, setIsExpanded] = useState<boolean>()
     const classes = menuStyles()
 
     return (
-        <>
+        <div className={className}>
             {!isExpanded ? (
                 <div
                     className={classes.dots}
@@ -15,7 +16,7 @@ export const Menu: React.FunctionComponent = ({ children }) => {
                     &#8286;
                 </div>
             ) : (
-                <div className={classes.menu}>
+                <div className={classes.menu_items}>
                     <span
                         className={classes.cross}
                         onClick={() => setIsExpanded(false)}
@@ -25,6 +26,6 @@ export const Menu: React.FunctionComponent = ({ children }) => {
                     {children}
                 </div>
             )}
-        </>
+        </div>
     )
 }

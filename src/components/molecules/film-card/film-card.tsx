@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import PropTypes from 'prop-types'
+import { Menu } from '..'
+import { withCondition } from '../../../hoc'
+import { FilmModel } from '../../../shared/services/types'
+import { Loader } from '../../atoms'
 
 import { DEFAULT_IMAGE } from './const'
-import { Loader } from '../../../atoms/loader/loader'
-import { FilmModel } from '../../../../shared/services/types'
 import { filmCardStyles } from './film-card.style'
-import { Menu } from '../../../molecules/menu/menu'
-import { withCondition } from '../../../../hoc'
 
 type props = {
     onDeleteFilm: (filmId: number) => void
@@ -59,21 +58,4 @@ export const FilmCard: React.FC<props> = ({
             </div>
         </div>
     )
-}
-
-FilmCard.propTypes = {
-    film: PropTypes.shape({
-        id: PropTypes.number,
-        title: PropTypes.string,
-        tagline: PropTypes.string,
-        vote_average: PropTypes.number,
-        vote_count: PropTypes.number,
-        release_date: PropTypes.string,
-        poster_path: PropTypes.string,
-        overview: PropTypes.string,
-        budget: PropTypes.number,
-        revenue: PropTypes.number,
-        genres: PropTypes.arrayOf(PropTypes.string),
-        runtime: PropTypes.number,
-    }) as any,
 }

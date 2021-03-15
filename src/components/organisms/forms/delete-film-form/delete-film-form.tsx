@@ -1,6 +1,5 @@
 import React from 'react'
-import { ThemeButton } from '../../../atoms'
-import { Card } from '../../../molecules'
+import { Card, ThemeButton } from '../../../atoms'
 import { deleteFilmFormStyles } from './delete-film-form.style'
 
 type props = {

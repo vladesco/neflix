@@ -1,6 +1,6 @@
 import React from 'react'
-import { Label } from '../../../../shared/components'
-import { Input, ThemeButton } from '../../../atoms'
+
+import { TextInput, ThemeButton, Label } from '../../atoms'
 import { filmsSearchingStyles } from './films-searching.style'
 
 type props = {
@@ -18,7 +18,7 @@ export const FilmsSearching: React.FC<props> = ({ onAddFilm }) => {
             </div>
             <p className={classes.label}>Find your movie</p>
             <div>
-                <Input
+                <TextInput
                     className={classes.input}
                     placeHolder="What do you want to watch?"
                 />

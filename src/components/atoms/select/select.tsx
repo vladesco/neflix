@@ -1,5 +1,4 @@
 import React, { useRef } from 'react'
-import PropTypes from 'prop-types'
 import cn from 'classnames'
 
 import { selectStyles } from './select.style'
@@ -53,13 +52,4 @@ export const Select: AtomReactComponent<props> = ({
             <p className={classes.marker}>&#9662;</p>
         </div>
     )
-}
-
-Select.propTypes = {
-    items: PropTypes.arrayOf((array, key) =>
-        array[key].value != null && array[key].text != null
-            ? null
-            : new Error('should be all fields')
-    ),
-    placeholder: PropTypes.string,
 }

@@ -1,9 +1,8 @@
 import React from 'react'
 import { FilmModel } from '../../../../shared/services/types'
-import { DateInput, Input, ThemeButton } from '../../../atoms'
+import { Card, DateInput, TextInput, ThemeButton } from '../../../atoms'
 import { Select } from '../../../atoms'
 import { GENRES } from '../../../const'
-import { Card } from '../../../molecules'
 import { editFilmFormStyles } from './edit-film-form.style'
 
 type props = {
@@ -24,10 +23,10 @@ export const EditFilmForm: React.FC<props> = ({ onCloseForm, edittedFilm }) => {
                     <span>{edittedFilm.id}</span>
 
                     <span className={classes.label}>Title</span>
-                    <Input
+                    <TextInput
                         placeHolder="Tile here"
                         value={edittedFilm.title}
-                    ></Input>
+                    />
 
                     <span className={classes.label}>Release Date</span>
                     <DateInput
@@ -36,10 +35,10 @@ export const EditFilmForm: React.FC<props> = ({ onCloseForm, edittedFilm }) => {
                     />
 
                     <span className={classes.label}>Movie URL</span>
-                    <Input
+                    <TextInput
                         placeHolder="Movie URL here"
                         value={edittedFilm.poster_path}
-                    ></Input>
+                    />
 
                     <span className={classes.label}>Genre</span>
                     <Select
@@ -50,16 +49,16 @@ export const EditFilmForm: React.FC<props> = ({ onCloseForm, edittedFilm }) => {
                     ></Select>
 
                     <span className={classes.label}>Overview</span>
-                    <Input
+                    <TextInput
                         placeHolder="Overview here"
                         value={edittedFilm.overview}
-                    ></Input>
+                    />
 
                     <span className={classes.label}>Runtime</span>
-                    <Input
+                    <TextInput
                         placeHolder="Runtime here"
                         value={edittedFilm.runtime}
-                    ></Input>
+                    />
 
                     <div className={classes.buttonArea}>
                         <ThemeButton theme="DARK">Reset</ThemeButton>

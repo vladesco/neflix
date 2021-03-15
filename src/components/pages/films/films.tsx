@@ -1,11 +1,11 @@
 import React from 'react'
 import { FilmsService } from '../../../shared/services/films.service'
 import { FilmModel } from '../../../shared/services/types'
-import { FilmsSearching } from './films-searching/films-searching'
+import { FilmsSearching } from '../../templates/films-searching/films-searching'
 import { ErrorBoundary } from '../../../shared/components'
 import { withCondition, withPopup } from '../../../hoc'
 import { DeleteFilmForm, AddFilmForm, EditFilmForm } from '../../organisms'
-import { FilmsContent } from './films-content/films-content'
+import { FilmsContent } from '../../templates/films-content/films-content'
 
 const DeleteFilmPopup = withCondition(withPopup(DeleteFilmForm))
 const AddFilmPopup = withCondition(withPopup(AddFilmForm))

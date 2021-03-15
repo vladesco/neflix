@@ -1,7 +1,7 @@
 import React from 'react'
-import { FilmModel } from '../../../../shared/services/types'
-import { FilmsActionPanel } from '../films-action-panel/films-action-panel'
-import { FilmsList } from '../films-list/films-list'
+
+import { FilmModel } from '../../../shared/services/types'
+import { FilmsActionPanel, FilmsList } from '../../organisms'
 import { filmsContentStyles } from './films-content.style'
 
 type props = {

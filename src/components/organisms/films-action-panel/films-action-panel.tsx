@@ -1,10 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import { Select } from '../../../atoms'
-import { FilmModel } from '../../../../shared/services/types'
+import { FilmModel } from '../../../shared/services/types'
+import { Select } from '../../atoms'
+import { GENRES, SORTED_CATEGORIES } from '../../const'
 import { filmsActionPanelStyles } from './films-action-panel.style'
-import { GENRES, SORTED_CATEGORIES } from '../../../const'
 
 type props = {
     films: FilmModel[]
@@ -40,23 +39,4 @@ export const FilmsActionPanel: React.FC<props> = ({
             </p>
         </div>
     )
-}
-
-FilmsActionPanel.propTypes = {
-    films: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number,
-            title: PropTypes.string,
-            tagline: PropTypes.string,
-            vote_average: PropTypes.number,
-            vote_count: PropTypes.number,
-            release_date: PropTypes.string,
-            poster_path: PropTypes.string,
-            overview: PropTypes.string,
-            budget: PropTypes.number,
-            revenue: PropTypes.number,
-            genres: PropTypes.arrayOf(PropTypes.string),
-            runtime: PropTypes.number,
-        }).isRequired as any
-    ),
 }

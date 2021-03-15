@@ -1,4 +1,4 @@
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss'
 
 export const menuStyles = createUseStyles({
     dots: {
@@ -14,7 +14,7 @@ export const menuStyles = createUseStyles({
         userSelect: 'none',
         cursor: 'pointer',
     },
-    menu: {
+    menu_items: {
         display: 'inline-flex',
         flexDirection: 'column',
         gap: '12px',
@@ -33,8 +33,8 @@ export const menuStyles = createUseStyles({
 
             '&:hover': {
                 backgroundColor: '#F65261',
-            }
-        }
+            },
+        },
     },
 
     cross: {
@@ -45,6 +45,6 @@ export const menuStyles = createUseStyles({
 
         '&:hover': {
             backgroundColor: 'transparent',
-        }
-    }
+        },
+    },
 })
