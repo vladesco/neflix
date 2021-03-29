@@ -1,5 +1,5 @@
 import React from 'react'
-import { FilmModel } from '../../../../shared/services/types'
+import { FilmModel } from '../../../../store'
 import { Card, DateInput, TextInput, ThemeButton } from '../../../atoms'
 import { Select } from '../../../atoms'
 import { GENRES } from '../../../const'
@@ -8,10 +8,14 @@ import { editFilmFormStyles } from './edit-film-form.style'
 type props = {
     edittedFilm: FilmModel
     onCloseForm: () => void
-    onEditFilm: (filmId: string) => void
+    onEditFilm: (newFilmModel: FilmModel) => void
 }
 
-export const EditFilmForm: React.FC<props> = ({ onCloseForm, edittedFilm }) => {
+export const EditFilmForm: React.FC<props> = ({
+    onCloseForm,
+    onEditFilm,
+    edittedFilm,
+}) => {
     const classes = editFilmFormStyles()
     return (
         <Card>
@@ -62,7 +66,12 @@ export const EditFilmForm: React.FC<props> = ({ onCloseForm, edittedFilm }) => {
 
                     <div className={classes.buttonArea}>
                         <ThemeButton theme="DARK">Reset</ThemeButton>
-                        <ThemeButton theme="LIGHT">Save</ThemeButton>
+                        <ThemeButton
+                            onClick={() => onEditFilm(edittedFilm)}
+                            theme="LIGHT"
+                        >
+                            Save
+                        </ThemeButton>
                     </div>
                 </div>
                 <span className={classes.cross} onClick={onCloseForm}>

@@ -1,6 +1,24 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { useDidMount } from '../../../hooks'
 
-import { FilmModel } from '../../../shared/services/types'
+import {
+    Categories,
+    FilmModel,
+    filmsWithAppliedSettingsSelector,
+    Genres,
+    loadFilms,
+    selectedFilmSelector,
+    selectFilm,
+    addFilm,
+    updateFilm,
+    deleteFilm,
+    setSortingCategory,
+    sortingCategorySelector,
+    State,
+    setGenre,
+    removeFilm,
+} from '../../../store'
 import { FilmsActionPanel, FilmsList } from '../../organisms'
 import { FilmPreview } from '../../organisms/film-preview/film-preview'
 import { FilmsSearching } from '../../organisms/films-searching/films-searching'
@@ -9,26 +27,29 @@ import { filmsStyles } from './films.style'
 type props = {
     films: FilmModel[]
     selectedFilm: FilmModel
-    onDeleteFilm: (filmId: number) => void
-    onUpdateFilm: (filmId: number) => void
-    onSelectFilm: (filmId: number) => void
-    onShowSearching: () => void
-    onAddFilm: () => void
-    onSetSortedCategory: (category: keyof FilmModel) => void
-    sortedCategory: string
+    sortingCategory: Categories
+    loadFilms: () => void
+    addFilm: () => void
+    updateFilm: (newFilmModel: FilmModel) => void
+    deleteFilm: (filmId: number) => void
+    selectFilm: (filmtId: number) => void
+    setSortingCategory: (category: Categories) => void
+    setGenre: (genre: Genres) => void
 }
-export const Films: React.FC<props> = ({
+const Component: React.FC<props> = ({
     films,
+    sortingCategory,
     selectedFilm,
-    onDeleteFilm,
-    onUpdateFilm,
-    onShowSearching,
-    onAddFilm,
-    onSelectFilm,
-    sortedCategory,
-    onSetSortedCategory,
+    setGenre,
+    setSortingCategory,
+    selectFilm,
+    loadFilms,
+    addFilm,
+    updateFilm,
+    deleteFilm,
 }) => {
     const classes = filmsStyles()
+    useDidMount(loadFilms)
 
     return (
         <>
@@ -36,26 +57,46 @@ export const Films: React.FC<props> = ({
                 {selectedFilm ? (
                     <FilmPreview
                         film={selectedFilm}
-                        onShowSearching={onShowSearching}
+                        onShowSearching={() => selectFilm(null)}
                     />
                 ) : (
-                    <FilmsSearching onAddFilm={onAddFilm} />
+                    <FilmsSearching onAddFilm={addFilm} />
                 )}
             </div>
 
             <div className={classes.filmsSection}>
                 <FilmsActionPanel
                     films={films}
-                    sortedCategory={sortedCategory}
-                    onSetSortedCategory={onSetSortedCategory}
+                    sortingCategory={sortingCategory}
+                    onSetSortingCategory={setSortingCategory}
+                    onSetGenre={setGenre}
                 />
                 <FilmsList
                     films={films}
-                    onDeleteFilm={onDeleteFilm}
-                    onUpdateFilm={onUpdateFilm}
-                    onSelectFilm={onSelectFilm}
+                    onDeleteFilm={deleteFilm}
+                    onUpdateFilm={updateFilm}
+                    onSelectFilm={selectFilm}
                 />
             </div>
         </>
     )
 }
+
+const mapStateToProps = (state: State) => {
+    return {
+        films: filmsWithAppliedSettingsSelector(state),
+        selectedFilm: selectedFilmSelector(state),
+        sortingCategory: sortingCategorySelector(state),
+    }
+}
+
+export const Films = connect(mapStateToProps, {
+    loadFilms,
+    removeFilm,
+    addFilm,
+    updateFilm,
+    selectFilm,
+    deleteFilm,
+    setSortingCategory,
+    setGenre,
+})(Component as any)

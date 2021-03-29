@@ -1,4 +1,5 @@
 import React from 'react'
+import { CreateFilmBody } from '../../../../store'
 import { Card, DateInput, TextInput, ThemeButton } from '../../../atoms'
 import { Select } from '../../../atoms'
 import { GENRES } from '../../../const'
@@ -6,10 +7,10 @@ import { addFilmFormStyles } from './add-film-form.style'
 
 type props = {
     onCloseForm: () => void
-    onAddFilm: (filmId: string) => void
+    onAddFilm: (filmBody: CreateFilmBody) => void
 }
 
-export const AddFilmForm: React.FC<props> = ({ onCloseForm }) => {
+export const AddFilmForm: React.FC<props> = ({ onCloseForm, onAddFilm }) => {
     const classes = addFilmFormStyles()
     return (
         <Card>
@@ -41,11 +42,15 @@ export const AddFilmForm: React.FC<props> = ({ onCloseForm }) => {
                     <TextInput placeHolder="Runtime here" />
 
                     <div className={classes.buttonArea}>
-                        <ThemeButton theme="DARK">Reset</ThemeButton>
-                        <ThemeButton theme="LIGHT">Confirm</ThemeButton>
+                        <ThemeButton
+                            onClick={() => onAddFilm(null)}
+                            theme="LIGHT"
+                        >
+                            Confirm
+                        </ThemeButton>
                     </div>
                 </div>
-                <span className={classes.cross} onClick={onCloseForm}>
+                <span onClick={onCloseForm} className={classes.cross}>
                     &#215;
                 </span>
             </div>
