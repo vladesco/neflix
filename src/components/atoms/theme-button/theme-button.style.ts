@@ -5,7 +5,7 @@ import { ThemesButton } from './types'
 const baseButtonStyles = {
     display: 'inline-flex',
     alignItems: 'center',
-    padding: '8px 12px',
+    padding: '8px 16px',
     textTransform: 'uppercase',
     borderRadius: '5px',
     cursor: 'pointer',

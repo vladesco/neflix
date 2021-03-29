@@ -1,4 +1,5 @@
 import React from 'react'
+import { FilmModel } from '../../../shared/services/types'
 
 import { TextInput, ThemeButton, Label } from '../../atoms'
 import { filmsSearchingStyles } from './films-searching.style'

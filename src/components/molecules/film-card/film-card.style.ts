@@ -1,4 +1,4 @@
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss'
 
 export const filmCardStyles = createUseStyles({
     card: {
@@ -17,12 +17,11 @@ export const filmCardStyles = createUseStyles({
     poster: {
         width: '100%',
         height: 'calc(100% - 100px)',
-        backgroundColor: 'rgba(48,48,48,0.5)',
 
         '& *': {
             width: '100%',
             height: '100%',
-        }
+        },
     },
     info: {
         display: 'flex',
@@ -46,5 +45,5 @@ export const filmCardStyles = createUseStyles({
         padding: '0 8px',
         border: '1px solid #8c8787',
         borderRadius: '2px',
-    }
+    },
 })
