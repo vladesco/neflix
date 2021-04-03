@@ -1,14 +1,14 @@
 import React from 'react'
 
-import { FilmModel } from '../../../shared/services/types'
 import { filmsListStyles } from './films-list.style'
 import { FilmCard } from '../../molecules'
+import { FilmModel } from '../../../store'
 
 type props = {
     films: FilmModel[]
     onDeleteFilm: (filmId: number) => void
-    onUpdateFilm: (filmId: number) => void
     onSelectFilm: (filmId: number) => void
+    onUpdateFilm: (newFilmModel: FilmModel) => void
 }
 
 export const FilmsList: React.FC<props> = ({

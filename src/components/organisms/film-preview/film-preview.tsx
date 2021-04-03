@@ -1,7 +1,7 @@
 import React from 'react'
 import { usePosterImage } from '../../../hooks'
+import { FilmModel } from '../../../store'
 
-import { FilmModel } from '../../../shared/services/types'
 import { Label } from '../../atoms'
 import { filmPreviewStyles } from './film-preview.style'
 

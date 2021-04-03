@@ -1,36 +1,43 @@
 import React from 'react'
 
-import { FilmModel } from '../../../shared/services/types'
+import { Categories, FilmModel, Genres } from '../../../store'
 import { Select } from '../../atoms'
-import { GENRES, SORTED_CATEGORIES } from '../../const'
+import { GENRES, SORTING_CATEGORIES } from '../../const'
 import { filmsActionPanelStyles } from './films-action-panel.style'
 
 type props = {
     films: FilmModel[]
-    onSetSortedCategory: (category: keyof FilmModel) => void
-    sortedCategory: string
+    onSetSortingCategory: (category: Categories) => void
+    onSetGenre: (genre: Genres) => void
+    sortingCategory: Categories
 }
 
 export const FilmsActionPanel: React.FC<props> = ({
-    onSetSortedCategory,
+    onSetSortingCategory,
+    onSetGenre,
     films,
-    sortedCategory,
+    sortingCategory,
 }) => {
     const classes = filmsActionPanelStyles()
     return (
         <div>
             <div className={classes.actionPanel}>
                 <div className={classes.nav}>
-                    {GENRES.map((gener) => (
-                        <span key={gener.value}>{gener.text}</span>
+                    {GENRES.map((genre) => (
+                        <span
+                            onClick={() => onSetGenre(genre.value)}
+                            key={genre.value}
+                        >
+                            {genre.text}
+                        </span>
                     ))}
                 </div>
                 <div className={classes.sorting}>
                     sort by
                     <Select
-                        onSelect={onSetSortedCategory}
-                        items={SORTED_CATEGORIES}
-                        selectedItem={sortedCategory}
+                        onSelect={onSetSortingCategory}
+                        items={SORTING_CATEGORIES}
+                        selectedItem={sortingCategory}
                     />
                 </div>
             </div>

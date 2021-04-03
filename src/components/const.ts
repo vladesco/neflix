@@ -1,14 +1,15 @@
-export const GENRES = [
-    { text: 'all', value: 0 },
-    { text: 'documentary', value: 1 },
-    { text: 'comedy', value: 2 },
-    { text: 'horror', value: 3 },
-    { text: 'crime', value: 4 },
+import { Categories, Genres } from '../store'
+
+export const GENRES: { text: string; value: Genres }[] = [
+    { text: Genres.ALL, value: Genres.ALL },
+    { text: Genres.COMEDY, value: Genres.COMEDY },
+    { text: Genres.CRIME, value: Genres.CRIME },
+    { text: Genres.DOCUMENTARY, value: Genres.DOCUMENTARY },
+    { text: Genres.HORROR, value: Genres.HORROR },
 ]
 
-export const SORTED_CATEGORIES = [
-    { text: 'release date', value: 'release_date' },
-    { text: 'vote average', value: 'vote_average' },
-    { text: 'budget', value: 'budget' },
-    { text: 'revenue', value: 'revenue' },
+export const SORTING_CATEGORIES: { text: string; value: Categories }[] = [
+    { text: Categories.GENRE, value: Categories.GENRE },
+    { text: Categories.RAITING, value: Categories.RAITING },
+    { text: Categories.RELEASE_DATE, value: Categories.RELEASE_DATE },
 ]

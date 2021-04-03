@@ -1,6 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import jss from 'jss'
+import plugin from 'jss-plugin-extend'
+import { Provider } from 'react-redux'
 import { App } from './app'
+import { store } from './store'
+
 import './global.styles.scss'
 
-ReactDOM.render(<App />, document.querySelector('#root'))
+jss.use(plugin())
+
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    document.querySelector('#root')
+)
