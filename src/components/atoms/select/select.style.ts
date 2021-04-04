@@ -7,29 +7,45 @@ export const selectStyles = createUseStyles({
     },
     select: {
         position: 'relative',
-        appearance: 'none',
-        background: 'transparent',
-        backgroundColor: '#232323',
-        border: 'none',
-        fontSize: '22px',
-        textAlignLast: 'center',
-        padding: '8px 24px 0px 8px',
-        textTransform: 'uppercase',
-        color: 'white',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        marginLeft: '16px',
         cursor: 'pointer',
-        userSelect: 'none',
-        opacity: 0.5,
-        zIndex: 2,
+
+        '&.opened': {
+            '&::after': {
+                fontSize: '24px',
+                content: '"▲"',
+                color: '#F65261',
+            },
+        },
+
+        '&::after': {
+            fontSize: '24px',
+            content: '"▼"',
+            color: '#F65261',
+        },
     },
-    marker: {
+    list: {
         position: 'absolute',
-        top: '50%',
-        right: 0,
-        transform: 'translateY(-50%)',
-        color: '#F65261',
-        fontSize: '24px',
-        userSelect: 'none',
+        right: '0',
+        zIndex: '999',
+        width: '100%',
+        boxSizing: 'border-box',
+        padding: '8px',
+        marginTop: '16px',
+        backgroundColor: '#232323',
+        boxShadow: '5px 5px 15px 5px #000000',
+    },
+    listItem: {
         cursor: 'pointer',
-        zIndex: 1,
+        margin: '8px',
+        '&.selected': {
+            color: '#F65261',
+        },
+        '&:hover': {
+            color: 'black',
+        },
     },
 })

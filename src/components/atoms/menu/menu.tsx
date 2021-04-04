@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { AtomReactComponent } from '../types'
 import { menuStyles } from './menu.style'
 
-export const Menu: AtomReactComponent = ({ children, className }) => {
+export const Menu: AtomReactComponent = ({ children, className, ...props }) => {
     const [isExpanded, setIsExpanded] = useState<boolean>()
     const classes = menuStyles()
 
     return (
-        <div className={className}>
+        <div className={className} {...props}>
             {!isExpanded ? (
                 <div
                     className={classes.dots}

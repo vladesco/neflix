@@ -1,4 +1,4 @@
-import { createUseStyles } from 'react-jss';
+import { createUseStyles } from 'react-jss'
 
 export const filmsActionPanelStyles = createUseStyles({
     actionPanel: {
@@ -18,17 +18,20 @@ export const filmsActionPanelStyles = createUseStyles({
         '& *': {
             cursor: 'pointer',
             userSelect: 'none',
-        }
+        },
     },
     sorting: {
         textTransform: 'uppercase',
         fontSize: '22px',
     },
+    select: {
+        width: '250px',
+    },
     count: {
         marginTop: '16px',
         fontSize: '22px',
         '& span': {
-            color: 'white'
-        }
-    }
+            color: 'white',
+        },
+    },
 })

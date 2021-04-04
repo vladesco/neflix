@@ -3,13 +3,23 @@ import { createUseStyles } from 'react-jss'
 export const addFilmFormStyles = createUseStyles({
     form: {
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
+        gap: '16px',
+        width: '500px',
     },
     content: {
         display: 'flex',
         flexDirection: 'column',
         gap: '16px',
-        paddingTop: '48px',
+        '& label': {
+            fontSize: '20px',
+            textTransform: 'uppercase',
+            color: '#F65261',
+        },
+        '& .error': {
+            fontSize: '20px',
+            color: '#eb4c2d',
+        },
     },
     title: {
         fontSize: '40px',
@@ -21,11 +31,7 @@ export const addFilmFormStyles = createUseStyles({
         fontSize: '48px',
         userSelect: 'none',
         cursor: 'pointer',
-    },
-    label: {
-        fontSize: '18px',
-        textTransform: 'uppercase',
-        color: '#F65261',
+        textAlign: 'end',
     },
     buttonArea: {
         display: 'flex',

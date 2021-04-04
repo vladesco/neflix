@@ -7,19 +7,22 @@ import { textInputStyles } from './text-input.style'
 type props = {
     placeHolder: string
     value?: string | number
+    onChange: (value: string | number) => void
 }
 
 export const TextInput: AtomReactComponent<props> = ({
-    placeHolder,
     className,
-    value,
+    onChange,
+    ...props
 }) => {
     const classes = textInputStyles()
     return (
         <input
             className={cn(classes.input, className)}
-            value={value}
-            placeholder={placeHolder}
+            onChange={(event) =>
+                onChange(event.target.valueAsNumber || event.target.value)
+            }
+            {...props}
         />
     )
 }
