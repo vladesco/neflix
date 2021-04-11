@@ -9,6 +9,7 @@ export const filmsStyles = createUseStyles({
     },
     filmsSection: {
         display: 'flex',
+        flex: 1,
         flexDirection: 'column',
         backgroundColor: '#232323',
         color: '#8c8787',

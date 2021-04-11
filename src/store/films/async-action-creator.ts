@@ -7,9 +7,11 @@ import {
 import { filmsUrl } from './const'
 import { CreateFilmBody, FilmModel } from './types'
 
-export function loadFilms() {
+export function loadFilms(query?: string) {
     return function (dispatch: (action: ReturnType<typeof setFilms>) => void) {
-        return fetch(filmsUrl)
+        const queryUrl = query ? `?${query}` : ''
+        const fullUrl = filmsUrl.concat(queryUrl)
+        return fetch(fullUrl)
             .then((res) => res.json())
             .then((filmsData: { data: FilmModel[] }) =>
                 dispatch(setFilms(filmsData.data))

@@ -10,7 +10,7 @@ export const selectStyles = createUseStyles({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginLeft: '16px',
+        gap: '16px',
         cursor: 'pointer',
 
         '&.opened': {

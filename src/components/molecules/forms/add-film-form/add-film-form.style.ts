@@ -41,8 +41,9 @@ export const addFilmFormStyles = createUseStyles({
     },
     select: {
         backgroundColor: '#424242',
-        width: '100%',
         color: 'white',
         borderRadius: '5px',
+        fontSize: '24px',
+        padding: '8px 8px 8px 24px',
     },
 })

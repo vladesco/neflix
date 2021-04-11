@@ -29,9 +29,9 @@ export const EditFilmForm: React.FC<props> = ({
         <Card>
             <div className={classes.form}>
                 <div className={classes.content}>
-                    <p className={classes.title}>Edit movie</p>
                     <span className={classes.cross} onClick={onCloseForm}>
                         &#215;
+                        <p className={classes.title}>Edit movie</p>
                     </span>
                     <span className="label">Movie id</span>
                     <span>{edittedFilm.id}</span>

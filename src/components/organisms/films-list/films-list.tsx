@@ -19,16 +19,21 @@ export const FilmsList: React.FC<props> = ({
 }) => {
     const classes = filmsListStyles()
     return (
-        <div className={classes.filmsList}>
-            {films.map((film) => (
-                <FilmCard
-                    key={film.id}
-                    film={film}
-                    onUpdateFilm={onUpdateFilm}
-                    onDeleteFilm={onDeleteFilm}
-                    onSelectFilm={onSelectFilm}
-                />
-            ))}
-        </div>
+        <>
+            <p className={classes.count}>
+                <span>{films.length}</span> movies found
+            </p>
+            <div className={classes.filmsList}>
+                {films.map((film) => (
+                    <FilmCard
+                        key={film.id}
+                        film={film}
+                        onUpdateFilm={onUpdateFilm}
+                        onDeleteFilm={onDeleteFilm}
+                        onSelectFilm={onSelectFilm}
+                    />
+                ))}
+            </div>
+        </>
     )
 }
