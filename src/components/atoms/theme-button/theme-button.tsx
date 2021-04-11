@@ -11,13 +11,13 @@ export const ThemeButton: AtomReactComponent<props> = ({
     theme,
     children,
     className,
-    onClick,
+    ...props
 }) => {
     const classes = themeButtonStyles(theme)
 
     return (
-        <div className={cn(classes.button, className)} onClick={onClick}>
+        <button className={cn(classes.button, className)} {...props}>
             {children}
-        </div>
+        </button>
     )
 }

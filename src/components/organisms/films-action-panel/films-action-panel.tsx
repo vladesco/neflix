@@ -35,9 +35,11 @@ export const FilmsActionPanel: React.FC<props> = ({
                 <div className={classes.sorting}>
                     sort by
                     <Select
-                        onSelect={onSetSortingCategory}
+                        className={classes.select}
+                        onChange={onSetSortingCategory}
                         items={SORTING_CATEGORIES}
-                        selectedItem={sortingCategory}
+                        value={sortingCategory}
+                        multiple={false}
                     />
                 </div>
             </div>

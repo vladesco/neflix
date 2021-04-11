@@ -35,6 +35,7 @@ export const FilmsSearching: React.FC<props> = ({ onAddFilm }) => {
                 <TextInput
                     className={classes.input}
                     placeHolder="What do you want to watch?"
+                    onChange={console.log}
                 />
                 <ThemeButton theme="LIGHT">Search</ThemeButton>
             </div>

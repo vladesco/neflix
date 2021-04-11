@@ -3,15 +3,25 @@ import { createUseStyles } from 'react-jss'
 export const editFilmFormStyles = createUseStyles({
     form: {
         display: 'flex',
-        flexDirection: 'row',
-        color: 'white',
-        fontSize: '24px',
+        flexDirection: 'column',
+        gap: '16px',
+        width: '500px',
+
+        '& .label': {
+            fontSize: '20px',
+            textTransform: 'uppercase',
+            color: '#F65261',
+        },
     },
     content: {
         display: 'flex',
         flexDirection: 'column',
         gap: '16px',
-        paddingTop: '48px',
+
+        '& .error': {
+            fontSize: '20px',
+            color: '#eb4c2d',
+        },
     },
     title: {
         fontSize: '40px',
@@ -23,11 +33,7 @@ export const editFilmFormStyles = createUseStyles({
         fontSize: '48px',
         userSelect: 'none',
         cursor: 'pointer',
-    },
-    label: {
-        fontSize: '18px',
-        textTransform: 'uppercase',
-        color: '#F65261',
+        textAlign: 'end',
     },
     buttonArea: {
         display: 'flex',

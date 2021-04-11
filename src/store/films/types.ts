@@ -13,7 +13,14 @@ export type FilmModel = {
     runtime: number
 }
 
-export type CreateFilmBody = FilmModel & { id: never }
+export type CreateFilmBody = {
+    title: string
+    release_date: string
+    poster_path: string
+    overview: string
+    genres: string[]
+    runtime: number
+}
 
 export enum Genres {
     ALL = 'All',

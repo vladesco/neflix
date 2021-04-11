@@ -41,7 +41,7 @@ export function replaceFilm(
     newFilmModel: FilmModel
 ): FilmsAction<{ newFilmModel: FilmModel }> {
     return {
-        type: FilmsActions.REMOVE_FILM,
+        type: FilmsActions.REPLACE_FILM,
         payload: {
             newFilmModel,
         },

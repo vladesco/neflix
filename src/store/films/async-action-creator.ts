@@ -31,21 +31,26 @@ export function updateFilm(filmModel: FilmModel) {
     return function (
         dispatch: (action: ReturnType<typeof replaceFilm>) => void
     ) {
-        console.log(filmModel)
         return fetch(filmsUrl, {
             method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify(filmModel),
         }).then(() => dispatch(replaceFilm(filmModel)))
     }
 }
 
-export function addFilm(filmModelWithoutId: CreateFilmBody) {
+export function addFilm(filmBody: CreateFilmBody) {
     return function (
         dispatch: (action: ReturnType<typeof insertFilm>) => void
     ) {
         return fetch(filmsUrl, {
             method: 'POST',
-            body: JSON.stringify(filmModelWithoutId),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(filmBody),
         })
             .then((res) => res.json())
             .then((filmModel: FilmModel) => dispatch(insertFilm(filmModel)))

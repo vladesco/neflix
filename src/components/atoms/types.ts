@@ -1,6 +1,6 @@
 import React from 'react'
 
-type atomReactProps = { className?: string }
+type atomReactProps = { [key: string]: any }
 
 export type AtomReactComponent<T extends Object = {}> = React.FC<
     T & atomReactProps
