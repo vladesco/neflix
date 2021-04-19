@@ -29,7 +29,7 @@ export const Select: AtomReactComponent<props> = ({
         multiple ? (value as valueType[]) : [value as valueType]
     )
     const displayedText = clickedItems.length
-        ? clickedItems.join(',')
+        ? clickedItems.join(', ')
         : placeholder
 
     const onItemClick = useCallback(

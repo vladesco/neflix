@@ -25,13 +25,7 @@ export const filmsActionPanelStyles = createUseStyles({
         fontSize: '22px',
     },
     select: {
-        width: '250px',
-    },
-    count: {
-        marginTop: '16px',
-        fontSize: '22px',
-        '& span': {
-            color: 'white',
-        },
+        padding: '8px',
+        fontSize: '24px',
     },
 })

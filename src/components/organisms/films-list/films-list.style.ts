@@ -8,5 +8,12 @@ export const filmsListStyles = createUseStyles({
         flexWrap: 'wrap',
         gap: '16px',
         marginBottom: '24px',
-    }
+    },
+    count: {
+        marginTop: '16px',
+        fontSize: '22px',
+        '& span': {
+            color: 'white',
+        },
+    },
 })

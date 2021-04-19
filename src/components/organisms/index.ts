@@ -1,3 +1,5 @@
 export * from './footer/footer'
 export * from './films-action-panel/films-action-panel'
 export * from './films-list/films-list'
+export * from './film-preview/film-preview'
+export * from './no-movies-found/no-movies-found'

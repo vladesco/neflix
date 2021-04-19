@@ -20,7 +20,7 @@ export const FilmsActionPanel: React.FC<props> = ({
 }) => {
     const classes = filmsActionPanelStyles()
     return (
-        <div>
+        <>
             <div className={classes.actionPanel}>
                 <div className={classes.nav}>
                     {GENRES.map((genre) => (
@@ -43,9 +43,6 @@ export const FilmsActionPanel: React.FC<props> = ({
                     />
                 </div>
             </div>
-            <p className={classes.count}>
-                <span>{films.length}</span> movies found
-            </p>
-        </div>
+        </>
     )
 }

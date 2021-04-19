@@ -27,6 +27,7 @@ export const editFilmFormStyles = createUseStyles({
         fontSize: '40px',
         color: 'white',
         textTransform: 'uppercase',
+        textAlign: 'start',
     },
     cross: {
         color: 'white',
@@ -43,8 +44,9 @@ export const editFilmFormStyles = createUseStyles({
     },
     select: {
         backgroundColor: '#424242',
-        width: '100%',
         color: 'white',
         borderRadius: '5px',
+        fontSize: '24px',
+        padding: '8px 8px 8px 24px',
     },
 })
