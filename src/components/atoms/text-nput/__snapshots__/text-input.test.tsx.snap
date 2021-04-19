@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`text input should be rendered 1`] = `
+<DocumentFragment>
+  <input
+    class="input-0-2-1"
+    placeholder="test placeholder"
+  />
+</DocumentFragment>
+`;

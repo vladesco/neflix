@@ -65,6 +65,7 @@ export const Select: AtomReactComponent<props> = ({
                 <div className={classes.list}>
                     {items.map((item) => (
                         <div
+                            key={item.value}
                             onClick={() => onItemClick(item.value)}
                             className={cn(
                                 classes.listItem,

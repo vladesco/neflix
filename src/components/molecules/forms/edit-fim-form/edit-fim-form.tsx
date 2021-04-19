@@ -3,7 +3,7 @@ import { Form, Formik } from 'formik'
 
 import { withUsageFormik } from '../../../../hoc'
 import { FilmModel } from '../../../../store'
-import { Card, DateInput, TextInput, ThemeButton } from '../../../atoms'
+import { Card, TextInput, ThemeButton } from '../../../atoms'
 import { Select } from '../../../atoms'
 import { GENRES } from '../../../const'
 import { editFilmFormStyles } from './edit-film-form.style'
@@ -16,7 +16,6 @@ type props = {
 }
 
 const TextInputWithFormik = withUsageFormik(TextInput)
-const DateInputWithFormik = withUsageFormik(DateInput)
 const SelectWithFormik = withUsageFormik(Select)
 
 export const EditFilmForm: React.FC<props> = ({
@@ -48,10 +47,11 @@ export const EditFilmForm: React.FC<props> = ({
                             <TextInputWithFormik
                                 label="Title"
                                 name="title"
-                                placeHolder="Tile here"
+                                placeholder="Tile here"
                             />
 
-                            <DateInputWithFormik
+                            <TextInputWithFormik
+                                type="date"
                                 label="Release Date"
                                 name="release_date"
                                 placeholder="Select Date"
@@ -60,7 +60,7 @@ export const EditFilmForm: React.FC<props> = ({
                             <TextInputWithFormik
                                 label="Movie Url"
                                 name="poster_path"
-                                placeHolder="Movie URL here"
+                                placeholder="Movie URL here"
                             />
 
                             <SelectWithFormik
@@ -75,14 +75,14 @@ export const EditFilmForm: React.FC<props> = ({
                             <TextInputWithFormik
                                 label="Overview"
                                 name="overview"
-                                placeHolder="Overview here"
+                                placeholder="Overview here"
                             />
 
                             <TextInputWithFormik
                                 label="Runtime"
                                 name="runtime"
                                 type="number"
-                                placeHolder="Runtime here"
+                                placeholder="Runtime here"
                             />
 
                             <div className={classes.buttonArea}>

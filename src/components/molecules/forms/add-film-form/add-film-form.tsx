@@ -1,10 +1,9 @@
 import React from 'react'
 import { Form, Formik } from 'formik'
-import * as Yup from 'yup'
 
 import { withUsageFormik } from '../../../../hoc'
 import { CreateFilmBody } from '../../../../store'
-import { Card, DateInput, TextInput, ThemeButton } from '../../../atoms'
+import { Card, TextInput, ThemeButton } from '../../../atoms'
 import { Select } from '../../../atoms'
 import { GENRES } from '../../../const'
 import { addFilmFormStyles } from './add-film-form.style'
@@ -16,16 +15,15 @@ type props = {
 }
 
 const TextInputWithFormik = withUsageFormik(TextInput)
-const DateInputWithFormik = withUsageFormik(DateInput)
 const SelectWithFormik = withUsageFormik(Select)
 
 const defaultFilmModel = {
     title: '',
     poster_path: '',
     overview: '',
-    runtime: null,
+    runtime: 0,
     genres: [],
-    release_date: null,
+    release_date: '',
 }
 
 export const AddFilmForm: React.FC<props> = ({ onCloseForm, onAddFilm }) => {
@@ -51,10 +49,11 @@ export const AddFilmForm: React.FC<props> = ({ onCloseForm, onAddFilm }) => {
                             <TextInputWithFormik
                                 label="Title"
                                 name="title"
-                                placeHolder="Tile here"
+                                placeholder="Tile here"
                             />
 
-                            <DateInputWithFormik
+                            <TextInputWithFormik
+                                type="date"
                                 label="Release Date"
                                 name="release_date"
                                 placeholder="Select Date"
@@ -63,7 +62,7 @@ export const AddFilmForm: React.FC<props> = ({ onCloseForm, onAddFilm }) => {
                             <TextInputWithFormik
                                 label="Movie Url"
                                 name="poster_path"
-                                placeHolder="Movie URL here"
+                                placeholder="Movie URL here"
                             />
 
                             <SelectWithFormik
@@ -78,14 +77,14 @@ export const AddFilmForm: React.FC<props> = ({ onCloseForm, onAddFilm }) => {
                             <TextInputWithFormik
                                 label="Overview"
                                 name="overview"
-                                placeHolder="Overview here"
+                                placeholder="Overview here"
                             />
 
                             <TextInputWithFormik
                                 label="Runtime"
                                 name="runtime"
                                 type="number"
-                                placeHolder="Runtime here"
+                                placeholder="Runtime here"
                             />
 
                             <div className={classes.buttonArea}>

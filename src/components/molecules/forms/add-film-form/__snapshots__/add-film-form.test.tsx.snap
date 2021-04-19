@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add film form should be rendered 1`] = `
+<DocumentFragment>
+  <div
+    class="card-0-2-7"
+  >
+    <div
+      class="form-0-2-1"
+    >
+      <span
+        class="cross-0-2-4"
+      >
+        ×
+      </span>
+      <div
+        class="content-0-2-2"
+      >
+        <p
+          class="title-0-2-3"
+        >
+          Add movie
+        </p>
+        <form
+          action="#"
+          class="form-0-2-1"
+        >
+          <label
+            for="title"
+          >
+            Title
+          </label>
+          <input
+            class="input-0-2-8"
+            name="title"
+            placeholder="Tile here"
+            value=""
+          />
+          <label
+            for="release_date"
+          >
+            Release Date
+          </label>
+          <input
+            class="input-0-2-9"
+            name="release_date"
+            placeholder="Select Date"
+            type="date"
+            value=""
+          />
+          <label
+            for="poster_path"
+          >
+            Movie Url
+          </label>
+          <input
+            class="input-0-2-8"
+            name="poster_path"
+            placeholder="Movie URL here"
+            value=""
+          />
+          <label
+            for="genres"
+          >
+            Genre
+          </label>
+          <div
+            class="wrapper-0-2-10 select-0-2-6"
+          >
+            <div
+              class="select-0-2-11 closed"
+            >
+              Select Genre
+            </div>
+          </div>
+          <label
+            for="overview"
+          >
+            Overview
+          </label>
+          <input
+            class="input-0-2-8"
+            name="overview"
+            placeholder="Overview here"
+            value=""
+          />
+          <label
+            for="runtime"
+          >
+            Runtime
+          </label>
+          <input
+            class="input-0-2-8"
+            name="runtime"
+            placeholder="Runtime here"
+            type="number"
+            value="0"
+          />
+          <div
+            class="buttonArea-0-2-5"
+          >
+            <button
+              class="button-0-2-14 button-d0-0-2-15"
+              type="reset"
+            >
+              Reset
+            </button>
+            <button
+              class="button-0-2-14 button-d1-0-2-16"
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

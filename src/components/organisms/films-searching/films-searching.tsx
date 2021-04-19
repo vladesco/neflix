@@ -40,7 +40,7 @@ export const FilmsSearching: React.FC<props> = ({
             <div>
                 <TextInput
                     className={classes.input}
-                    placeHolder="What do you want to watch?"
+                    placeholder="What do you want to watch?"
                     onChange={setSearchingFilmTitle as any}
                 />
                 <ThemeButton

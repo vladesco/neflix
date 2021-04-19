@@ -5,7 +5,7 @@ import { AtomReactComponent } from '../types'
 import { textInputStyles } from './text-input.style'
 
 type props = {
-    placeHolder: string
+    placeholder: string
     value?: string | number
     onChange: (value: string | number) => void
 }

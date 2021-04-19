@@ -94,7 +94,7 @@ const Component: React.FC<props> = ({
                     onSetSortingCategory={setSortingCategory}
                     onSetGenre={setGenre}
                 />
-                {query && films.length ? (
+                {films.length ? (
                     <FilmsList
                         films={films}
                         onDeleteFilm={deleteFilm}

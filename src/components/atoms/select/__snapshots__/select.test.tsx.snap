@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`select should be rendered 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper-0-2-1"
+  >
+    <div
+      class="select-0-2-2 closed"
+    />
+  </div>
+</DocumentFragment>
+`;
