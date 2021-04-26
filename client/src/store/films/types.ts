@@ -53,7 +53,7 @@ export type FilmsState = {
     sortingCategory: Categories
 }
 
-export type FilmsAction<T = any> = {
+export type FilmsAction<T = AnyObject> = {
     type: FilmsActions
     payload?: T
 }

@@ -1,19 +1,17 @@
 import React from 'react'
-import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom'
-import { HashRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import jss from 'jss'
 import plugin from 'jss-plugin-extend'
 
 import { App } from './src/app'
-import { store } from './src/store'
+import { createStore } from './src/store'
 jss.use(plugin())
 
-ReactDOM.render(
-    <Provider store={store}>
-        <HashRouter>
-            <App />
-        </HashRouter>
-    </Provider>,
+const inititialState = window.STATE
+delete window.STATE
+
+ReactDOM.hydrate(
+    <App store={createStore(inititialState)} Router={BrowserRouter} />,
     document.querySelector('#root')
 )

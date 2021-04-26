@@ -5,7 +5,7 @@ const CopyPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const baseConfig = {
-    entry: './index.tsx',
+    entry: path.resolve(__dirname, './index.tsx'),
     mode: 'development',
     module: {
         rules: [
@@ -30,14 +30,14 @@ const baseConfig = {
     },
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '../dist'),
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/index.html',
+            template: path.resolve(__dirname, './src/index.html'),
             filename: 'index.html',
         }),
-        new CopyPlugin({ patterns: [{ from: 'assets', to: 'assets' }] }),
+        new CopyPlugin({ patterns: [{ from: path.resolve(__dirname, './assets'), to: 'assets' }] }),
         new CleanWebpackPlugin(),
     ],
 }

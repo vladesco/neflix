@@ -25,7 +25,7 @@ export const FilmCard: React.FC<props> = ({
     onSelectFilm,
 }) => {
     const posterImage = usePosterImage(film.poster_path)
-    const classes = filmCardStyles(film)
+    const classes = filmCardStyles()
 
     const [isMenuShown, showMenu] = useState<boolean>()
     const [isDeleteFormShown, showDeleteForm] = useState<boolean>()

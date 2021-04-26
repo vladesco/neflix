@@ -2,8 +2,7 @@ import { Field, FieldHookConfig, useField } from 'formik'
 import React from 'react'
 import { withCondition } from '../with-condition/with-condition'
 
-type anyObject = { [key: string]: any }
-type props = FieldHookConfig<any> & { label?: string } & anyObject
+type props = FieldHookConfig<AnyObject> & AnyObject & { label?: string }
 
 const ErrorMessageWithCondition = withCondition<{ error: string }>(
     ({ error }) => <div className="error">{error}</div>

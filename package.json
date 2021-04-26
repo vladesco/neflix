@@ -4,9 +4,10 @@
   "description": "",
   "main": "webpack.base.config.js",
   "scripts": {
-    "start": "webpack serve --open --env mode=dev",
-    "build": "webpack --env mode=prod",
-    "test": "jest"
+    "client:start": "webpack serve --open --config ./client/webpack.config.js --env mode=dev",
+    "client:build": "webpack --config ./client/webpack.config.js --env mode=prod",
+    "client:test": "jest",
+    "ssr:start": "webpack --config ./server/webpack.config.js && node ./server/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,10 @@
   "dependencies": {
     "@types/react-dom": "^17.0.1",
     "classnames": "^2.2.6",
+    "express": "^4.17.1",
     "formik": "^2.2.6",
     "jss-plugin-extend": "^10.5.1",
+    "node-fetch": "^2.6.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -51,6 +54,7 @@
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.1.0",
     "html-webpack-plugin": "^5.2.0",
+    "ignore-loader": "^0.1.2",
     "jest": "^26.6.3",
     "prettier": "2.2.1",
     "sass": "^1.32.8",

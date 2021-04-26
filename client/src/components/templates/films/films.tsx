@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { useHistory, useLocation, useParams } from 'react-router'
+import { useHistory, useParams } from 'react-router'
 import { useDidMount } from '../../../hooks'
 
 import {
@@ -58,6 +58,8 @@ const Component: React.FC<props> = ({
     const history = useHistory()
 
     useDidMount(() => {
+        if (films.length) return
+
         if (id) {
             selectFilm(Number(id))
         }
