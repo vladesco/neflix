@@ -1,3 +1,4 @@
+import { Store } from 'redux'
 import { FilmsAction, FilmsState } from './films'
 
 export type State = {
@@ -5,3 +6,4 @@ export type State = {
 }
 
 export type StateAction = FilmsAction
+export type ApplicationStore = Store<State, StateAction>
